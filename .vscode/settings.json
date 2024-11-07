@@ -4,7 +4,7 @@
   "editor.tabSize": 2,
   "editor.indentSize": "tabSize",
   "[cpp]": {
-    "editor.tabSize": 2
+    "editor.tabSize": 4
   },
   "C_Cpp.formatting": "clangFormat",
   "cmake.generator": "Unix Makefiles"
