@@ -3,6 +3,7 @@
   "C_Cpp.default.cStandard": "c99",
   "editor.tabSize": 2,
   "editor.indentSize": "tabSize",
+  "editor.fontLigatures": false,
   "[cpp]": {
     "editor.tabSize": 4
   },
