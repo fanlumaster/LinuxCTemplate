@@ -7,6 +7,9 @@
   "[cpp]": {
     "editor.tabSize": 4
   },
+  "[c]": {
+    "editor.tabSize": 4
+  },
   "C_Cpp.formatting": "clangFormat",
   "cmake.generator": "Unix Makefiles"
 }
