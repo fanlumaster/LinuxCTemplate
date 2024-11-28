@@ -16,10 +16,7 @@ if [ ! -d "$buildFolderPath" ]; then
   echo "build folder created."
 fi
 
-# cmake -G "Unix Makefiles" -DCMAKE_SYSTEM_PROCESSOR=x86_64 -S . -B ./build/
-cmake -G "Unix Makefiles" -D CMAKE_C_COMPILER=/usr/bin/gcc -D CMAKE_CXX_COMPILER=/usr/bin/g++ -S . -B ./build/
-# cmake -G "Unix Makefiles" -DCMAKE_CXX_COMPILER=/usr/bin/clang++ -S . -B ./build/
-# CC=/usr/bin/clang CXX=/usr/bin/clang++ cmake -G "Unix Makefiles" -S . -B ./build/
+cmake -G "Unix Makefiles" -D CMAKE_C_COMPILER=/usr/bin/gcc -S . -B ./build/
 
 if [ $? -eq 0 ]; then
   cmake --build ./build/ --config DEBUG
@@ -27,8 +24,8 @@ if [ $? -eq 0 ]; then
     content=$(<"./CMakeLists.txt")
     exePath=""
     while IFS= read -r line; do
-      if [[ $line == "add_executable"* ]]; then
-        pattern="\((.*?)\)"
+      if [[ $line == "set(MY_EXECUTABLE_NAME"* ]]; then
+        pattern="\"([^\"]+)\""
         if [[ $line =~ $pattern ]]; then
           contentInParentheses="${BASH_REMATCH[1]}"
           result=($contentInParentheses)
